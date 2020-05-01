@@ -229,7 +229,7 @@
           </thead>
           <tbody>
             <tr ng-repeat="layer in history | orderBy:sortType:sortReverse">
-              <td style="white-space: nowrap;">
+              <td style="white-space: nowrap;" ng-attr-title="{{ layer.Id }}">
                 {{ layer.Order }}
               </td>
               <td style="white-space: nowrap;">
