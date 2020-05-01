@@ -219,6 +219,13 @@
                 <span ng-show="sortType == 'CreatedBy' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
               </a>
             </th>
+            <th>
+              <a ng-click="order('Tags')">
+                Tags
+                <span ng-show="sortType == 'Tags' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+                <span ng-show="sortType == 'Tags' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+              </a>
+            </th>
           </thead>
           <tbody>
             <tr ng-repeat="layer in history | orderBy:sortType:sortReverse">
@@ -247,6 +254,9 @@
                     {{ layer.CreatedBy | imagelayercommand }}
                   </span>
                 </div>
+              </td>
+              <td style="white-space: nowrap;">
+                <span class="label label-primary image-tag ng-binding ng-scope" ng-repeat="tag in layer.Tags">{{ tag }}</span>
               </td>
             </tr>
           </tbody>
